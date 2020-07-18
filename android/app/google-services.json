@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "187892736131",
+    "firebase_url": "https://mychat-50a88.firebaseio.com",
+    "project_id": "mychat-50a88",
+    "storage_bucket": "mychat-50a88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187892736131:android:ca0dd38b17e06241fabbb6",
+        "android_client_info": {
+          "package_name": "com.sharduldalal.mychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187892736131-bmqje8ma35qrjrc64i00oen9175rgs1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaSZYsrOJiFDtRV9AG88UIr9gwjNBnRoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187892736131-bmqje8ma35qrjrc64i00oen9175rgs1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

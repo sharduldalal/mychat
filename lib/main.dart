@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mychat/Pages/Login.dart';
+import 'package:mychat/Pages/Signup.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: login(),
+      home: signup(),
     );
   }
 }
