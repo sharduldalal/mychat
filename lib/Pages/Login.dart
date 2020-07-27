@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:mychat/Engine/Auth.dart';
+import 'package:mychat/Pages/Chats.dart';
 import 'package:mychat/Widgets/Widgets.dart';
 
 class login extends StatefulWidget {
+  final Function toggle;
+
+  login(this.toggle);
+
   @override
   _loginState createState() => _loginState();
 }
 
 class _loginState extends State<login> {
+
+  Auth auth = new Auth();
+
+  TextEditingController emailTEC = new TextEditingController();
+  TextEditingController passwordTEC = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +62,12 @@ class _loginState extends State<login> {
                   children: <Widget>[
                     Container(
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          auth.loginWithEmailAndPAssword(emailTEC.text, passwordTEC.text).then((value) =>
+                          Navigator.pushReplacement(context, MaterialPageRoute(
+                            builder: (context) => Chats()
+                          )));
+                        },
                         child: Text(
                           "Login",
                           style: textFieldStyle(),
@@ -74,8 +91,21 @@ class _loginState extends State<login> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text("Dont have an Account?", style: textFieldStyle(),),
-                        Text("Signup", style: textFieldStyle(),)
+                        Text(
+                          "Dont have an Account?",
+                          style: textFieldStyle(),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            widget.toggle();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 8),
+                              child: Text(
+                            "Signup",
+                            style: textFieldStyle(),
+                          )),
+                        )
                       ],
                     ),
                     SizedBox(
