@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mychat/Engine/Auth.dart';
 import 'package:mychat/Engine/Databse.dart';
+import 'package:mychat/Helper/SharedPrefrences.dart';
 import 'package:mychat/Pages/Chats.dart';
 import 'package:mychat/Widgets/Widgets.dart';
 
@@ -22,6 +23,8 @@ class _signupState extends State<signup> {
 
   AddUserInfo addUserInfo = new AddUserInfo();
 
+  SharedPrefrences sharedPrefrences = new SharedPrefrences();
+
   final fromKey = GlobalKey<FormState>();
   TextEditingController usernameTEC = new TextEditingController();
   TextEditingController emailTEC = new TextEditingController();
@@ -34,6 +37,10 @@ class _signupState extends State<signup> {
     "name" : usernameTEC.text,
     "email" : emailTEC.text,
   };
+
+    SharedPrefrences.saveUsername(usernameTEC.text);
+    SharedPrefrences.saveEmail(emailTEC.text);
+
     if(fromKey.currentState.validate()){
       setState(() {
         isLoading = true;

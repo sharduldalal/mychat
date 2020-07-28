@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mychat/Engine/Auth.dart';
 import 'package:mychat/Helper/Authenticate.dart';
+import 'package:mychat/Helper/Conatants.dart';
+import 'package:mychat/Helper/SharedPrefrences.dart';
 import 'package:mychat/Pages/Search.dart';
 
 class Chats extends StatefulWidget {
@@ -11,6 +13,17 @@ class Chats extends StatefulWidget {
 class _ChatsState extends State<Chats> {
 
   Auth auth = new Auth();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getUserInfo();
+    super.initState();
+  }
+
+  getUserInfo() async {
+    Constants.MyName = await SharedPrefrences.getUsername();
+  }
 
   @override
   Widget build(BuildContext context) {
