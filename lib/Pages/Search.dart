@@ -44,7 +44,7 @@ class _SearchState extends State<Search> {
       createChatPage.createPage(ChatsId, ChatsMap);
 
       Navigator.push(context, MaterialPageRoute(
-          builder: (context) => individualChatPage()
+          builder: (context) => individualChatPage(ChatsId)
       ));
     } else {
       print("You Cannot Text Yourself");
